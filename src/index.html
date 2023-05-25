@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Business Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffe4e1;
+            color: #333;
+            padding: 10px;
+        }
+        #content {
+            background-color: #fff;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+        }
+        #business-name {
+            font-size: 2em;
+            color: #333;
+            text-align: center;
+        }
+        #remaining-offers {
+            font-size: 1.2em;
+            color: #555;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="content">
+        <h1 id="business-name"></h1>
+        <p id="remaining-offers"></p>
+    </div>
+
+    <script>
+        window.onload = function() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var businessId = urlParams.get('businessId');
+
+            fetch('/.netlify/functions/businessDetails?businessId=' + businessId)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('business-name').innerText = data.businessName;
+                    document.getElementById('remaining-offers').innerText = data.remainingOffers + ' Remaining Offers';
+                })
+                .catch(error => console.error('Error:', error));
+        };
+    </script>
+  </body>
+</html>
