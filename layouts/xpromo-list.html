@@ -1,0 +1,11 @@
+{{ define "main" }}
+<h1>All Promos</h1>
+<ul>
+  {{ range .Pages }}
+  <li>
+    <a href="{{ .Permalink }}">{{ .Title }}</a>
+    <p>{{ .Params.description }}</p>
+  </li>
+  {{ end }}
+</ul>
+{{ end }}

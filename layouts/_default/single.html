@@ -1,0 +1,13 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+
+{{ range .Params.promos }}
+  <h2>{{ .promo }}</h2>
+  <p>{{ .description }}</p>
+  <div class="details">
+    <div class="detail-element">Donation Price: ${{ .donation_price }}</div>
+    <div class="detail-element">Purchase Price: ${{ .purchase_price }}</div>
+    <div class="detail-element">Inventory: {{ .inventory }}</div>
+  </div>
+{{ end }}
+{{ end }}
