@@ -1,8 +1,0 @@
-{{ $dataFile := printf "%s" .File.BaseName }}
-{{ range index .Site.Data $dataFile }}
-    <h2>{{ .promo }}</h2>
-    <p>{{ .description }}</p>
-    <p>Donation Price: {{ .donation_price }}</p>
-    <p>Purchase Price: {{ .purchase_price }}</p>
-    <p>Inventory: {{ .inventory }}</p>
-{{ end }}

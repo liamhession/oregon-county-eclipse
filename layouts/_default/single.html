@@ -1,13 +1,29 @@
 {{ define "main" }}
-<h1>{{ .Title }}</h1>
+<h1 class="business-title">{{ .Title }}</h1>
 
+<div class="promos-pane">
 {{ range .Params.promos }}
-  <h2>{{ .promo }}</h2>
-  <p>{{ .description }}</p>
-  <div class="details">
-    <div class="detail-element">Donation Price: ${{ .donation_price }}</div>
-    <div class="detail-element">Purchase Price: ${{ .purchase_price }}</div>
-    <div class="detail-element">Inventory: {{ .inventory }}</div>
+  <div class="promo">
+    <h2 class="promo-title">{{ .promo }}</h2>
+    <p class="promo-description">{{ .description }}</p>
+    <div class="details">
+      <div class="detail-element">
+        <span class="detail-label">Donation Price:</span>
+        <span class="detail-value">${{ .donation_price }}</span>
+      </div>
+      <div class="detail-element">
+        <span class="detail-label">Purchase Price:</span>
+        <span class="detail-value">${{ .purchase_price }}</span>
+      </div>
+      <div class="detail-element">
+        <span class="detail-label">Inventory:</span>
+        <span class="detail-value">{{ .inventory }}</span>
+      </div>
+    </div>
+    <a class="donate-button" href="#">Donate to get this promo ➡</a>
   </div>
+  <hr/>
 {{ end }}
+</div>
+
 {{ end }}
