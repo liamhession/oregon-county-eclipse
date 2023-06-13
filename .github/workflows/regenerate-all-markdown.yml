@@ -16,14 +16,11 @@ jobs:
       with:
         node-version: '14'
 
-    - name: cd to build dir
-      run: cd build
-
     - name: Install Dependencies
       run: npm install @supabase/supabase-js
 
     - name: Generate Markdown Files
-      run: node generateMarkdownFiles.js
+      run: node build/generateMarkdownFiles.js
 
     - name: Commit and Push
       run: |

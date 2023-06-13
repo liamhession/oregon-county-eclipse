@@ -10,4 +10,4 @@ public/
 
 # node_modules, anywhere
 node_modules/
-build/package-lock.json
+package-lock.json
