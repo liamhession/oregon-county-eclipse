@@ -20,7 +20,7 @@ jobs:
       run: npm install @supabase/supabase-js
 
     - name: Generate Markdown Files
-      run: node build/generateMarkdownFiles.js
+      run: node build/generateMarkdown.js
 
     - name: Commit and Push
       run: |
