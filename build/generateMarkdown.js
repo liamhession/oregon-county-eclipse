@@ -20,9 +20,22 @@ async function generateMarkdownFiles() {
 
     if (error) throw error;
 
+    let special_hours = [];
+    if (business.special_hours) {
+      for (let [day, hours] of Object.entries(business.special_hours)) {
+        if (hours.is_open) {
+          special_hours.push(`  - "${day}: Open from ${hours.open_blocks[0].start_time} to ${hours.open_blocks[0].end_time}"`);
+        } else {
+          special_hours.push(`  - "${day}: Closed"`);
+        }
+      }
+    }
+
     let content =
 `---
 title: "${business.name}"
+${business.tagline ? `tagline: "${business.tagline}"` : ''}
+${special_hours.length > 0 ? `special_hours:\n${special_hours.join('\n')}\n` : ''}
 promos:
 ${promos.map(promo => `  - name: "${promo.name}"
     description: "${promo.description}"

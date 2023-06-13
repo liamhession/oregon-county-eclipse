@@ -1,5 +1,19 @@
 {{ define "main" }}
-<h1 class="business-title">{{ .Title }}</h1>
+<div class="business-header">
+  <h1 class="business-title">{{ .Title }}</h1>
+  {{ with .Params.tagline }}
+    <h2 class="business-tagline">{{ . }}</h2>
+  {{ end }}
+</div>
+
+{{ with .Params.special_hours }}
+<div class="special-hours">
+  <h3>Special Eclipse Weekend Hours</h3>
+    {{ range . }}
+    <p>{{ . }}</p>
+    {{ end }}
+</div>
+{{ end }}
 
 <div class="promos-pane">
 {{ range .Params.promos }}

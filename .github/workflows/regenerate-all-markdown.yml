@@ -27,5 +27,5 @@ jobs:
         git config --global user.name 'Liam Hession (automated)'
         git config --global user.email 'liamhession@gmail.com'
         git add -A
-        git commit -m "Update all business markdown files"
+        git commit -m "[Automated] Update all business markdown files"
         git push
