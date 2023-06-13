@@ -8,6 +8,7 @@ function useQuery() {
 }
 
 function EditBusiness() {
+  const [image, setImage] = useState(null);
   const [promos, setPromos] = useState([]);
   let query = useQuery();
   const bizSlug = query.get('business-slug');
@@ -25,6 +26,30 @@ function EditBusiness() {
 
     fetchPromos();
   }, [bizSlug]);
+
+  const handleImageChange = (event) => {
+    if (event.target.files && event.target.files[0]) {
+      setImage(event.target.files[0]);
+    }
+  };
+
+  const handleImageUpload = async () => {
+    if (!image) return;
+
+    // Create a unique file name
+    const filePath = `${bizSlug}/${image.name}`;
+
+    const { error } = await supabase
+      .storage
+      .from('business-images')
+      .upload(filePath, image);
+
+    if (error) {
+      console.error('Error uploading image:', error);
+    } else {
+      console.log('Image uploaded');
+    }
+  };
 
   const handleInputChange = (index, event) => {
     const target = event.target;
@@ -46,7 +71,12 @@ function EditBusiness() {
   }
 
   return (
-    <div className="App">
+    <div className="max-w-screen-lg m-auto container">
+      <div className="my-8 flex flex-col">
+        <input className="m-auto" type="file" onChange={handleImageChange} />
+        <button className="mb-2 p-2 bg-blue-500 text-white rounded" onClick={handleImageUpload}>Upload Image</button>
+      </div>
+
       {promos.map((promo, index) => (
         <div key={index} className="flex flex-col mb-4">
           <input className="mb-2 p-2 border rounded" name="name" value={promo.name} onChange={event => handleInputChange(index, event)} />
