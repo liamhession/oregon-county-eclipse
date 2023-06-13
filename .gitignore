@@ -5,6 +5,9 @@
 
 .hugo_build.lock
 
+# Local Hugo output folder
+public/
+
 # node_modules, anywhere
 node_modules/
 build/package-lock.json
