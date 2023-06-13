@@ -26,7 +26,7 @@ body {
   margin: 30px auto;
 }
 
-.promo-title, .promo-description {
+.promo-name, .promo-description {
   text-align: center;
   margin: 0;
   color: #3E5577;
