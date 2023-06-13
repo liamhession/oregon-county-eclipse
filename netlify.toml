@@ -1,4 +1,4 @@
 [build]
   command = "hugo"
-  publish = "src"
+  publish = "public"
   functions = "non_existent"
