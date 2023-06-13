@@ -1,0 +1,34 @@
+name: Regenerate All Markdown Files
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Use Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: cd to build dir
+      run: cd build
+
+    - name: Install Dependencies
+      run: npm install @supabase/supabase-js
+
+    - name: Generate Markdown Files
+      run: node generateMarkdownFiles.js
+
+    - name: Commit and Push
+      run: |
+        git config --global user.name 'Liam Hession (automated)'
+        git config --global user.email 'liamhession@gmail.com'
+        git add -A
+        git commit -m "Update all business markdown files"
+        git push
