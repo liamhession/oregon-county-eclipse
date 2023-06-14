@@ -13,6 +13,12 @@ async function generateMarkdownFiles() {
   if (error) throw error;
 
   for (let business of businesses) {
+    let { data } = await supabase
+      .storage
+      .from('business-images')
+      .getPublicUrl(`${business.slug}/header.jpg`);
+    let { publicUrl: headerImageURL } = data;
+
     let { data: promos, error } = await supabase
       .from('promos')
       .select('*')
@@ -20,6 +26,7 @@ async function generateMarkdownFiles() {
 
     if (error) throw error;
 
+    // TODO: support multiple hour blocks per day
     let special_hours = [];
     if (business.special_hours) {
       for (let [day, hours] of Object.entries(business.special_hours)) {
@@ -35,6 +42,7 @@ async function generateMarkdownFiles() {
 `---
 title: "${business.name}"
 ${business.tagline ? `tagline: "${business.tagline}"` : ''}
+${headerImageURL ? `image: "${headerImageURL}"` : ''}
 ${special_hours.length > 0 ? `special_hours:\n${special_hours.join('\n')}\n` : ''}
 promos:
 ${promos.map(promo => `  - name: "${promo.name}"

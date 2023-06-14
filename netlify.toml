@@ -1,4 +1,4 @@
 [build]
-  command = "hugo"
+  command = "./build/build-hugo.sh"
   publish = "public"
   functions = "non_existent"

@@ -6,6 +6,10 @@
   {{ end }}
 </div>
 
+{{ with .Params.image }}
+  <div class="header-image" style="background-image: url('{{ . }}');"></div>
+{{ end }}
+
 {{ with .Params.special_hours }}
 <div class="special-hours">
   <h3>Special Eclipse Weekend Hours</h3>
