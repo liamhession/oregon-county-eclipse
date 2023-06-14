@@ -27,13 +27,25 @@ async function generateMarkdownFiles() {
     if (error) throw error;
 
     // TODO: support multiple hour blocks per day
+    const displayDates = {
+      "0404": "Thursday, April 4",
+      "0405": "Friday, April 5",
+      "0406": "Saturday, April 6",
+      "0407": "Sunday, April 7",
+      "0408": "Monday, April 8",
+      "0409": "Tuesday, April 9",
+    };
+    
     let special_hours = [];
     if (business.special_hours) {
-      for (let [day, hours] of Object.entries(business.special_hours)) {
+      const sortedKeys = Object.keys(business.special_hours).sort();
+      for (const key of sortedKeys) {
+        const hours = business.special_hours[key];
+    
         if (hours.is_open) {
-          special_hours.push(`  - "${day}: Open from ${hours.open_blocks[0].start_time} to ${hours.open_blocks[0].end_time}"`);
+          special_hours.push(`  - "${displayDates[key]}: Open from ${hours.open_blocks[0].start_time} to ${hours.open_blocks[0].end_time}"`);
         } else {
-          special_hours.push(`  - "${day}: Closed"`);
+          special_hours.push(`  - "${displayDates[key]}: Closed"`);
         }
       }
     }
@@ -53,7 +65,7 @@ ${promos.map(promo => `  - name: "${promo.name}"
 ---
 `;
 
-    fs.writeFileSync(`./content/${business.slug}.md`, content);
+    fs.writeFileSync(`./eclipse-site/content/${business.slug}.md`, content);
   }
 }
 
