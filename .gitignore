@@ -11,3 +11,6 @@ public/
 # node_modules, anywhere
 node_modules/
 package-lock.json
+
+# when the admin app is built and added to static of hugo, don't track it
+eclipse-site/static/admin

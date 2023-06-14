@@ -1,4 +1,10 @@
 [build]
-  command = "./build/build-hugo.sh"
+  command = "./build/build-to-publish.sh"
   publish = "public"
   functions = "non_existent"
+
+  [[redirects]]
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200
+
