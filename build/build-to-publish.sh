@@ -1,5 +1,5 @@
 #!/bin/bash
 
-./build-admin.sh
+./build/build-admin.sh
 # After admin app is built, it gets added to the eclipse-site static directory.
-./build-hugo.sh
+./build/build-hugo.sh
