@@ -7,7 +7,7 @@ special_hours:
   - "Friday, April 5: Open from 8 AM to 8 PM"
   - "Saturday, April 6: Open from 6 AM to 8 PM"
   - "Sunday, April 7: Open from 6 AM to 8 PM"
-  - "Monday, April 8: Open from 6 AM to 9 AM"
+  - "Monday, April 8: Open from 6 AM to 9 AM, 5 PM to 8 PM"
   - "Tuesday, April 9: Closed"
 
 promos:

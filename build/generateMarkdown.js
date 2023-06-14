@@ -26,24 +26,24 @@ async function generateMarkdownFiles() {
 
     if (error) throw error;
 
-    // TODO: support multiple hour blocks per day
-    const displayDates = {
-      "0404": "Thursday, April 4",
-      "0405": "Friday, April 5",
-      "0406": "Saturday, April 6",
-      "0407": "Sunday, April 7",
-      "0408": "Monday, April 8",
-      "0409": "Tuesday, April 9",
-    };
-    
     let special_hours = [];
     if (business.special_hours) {
+      const displayDates = {
+        "0404": "Thursday, April 4",
+        "0405": "Friday, April 5",
+        "0406": "Saturday, April 6",
+        "0407": "Sunday, April 7",
+        "0408": "Monday, April 8",
+        "0409": "Tuesday, April 9",
+      };
+
       const sortedKeys = Object.keys(business.special_hours).sort();
       for (const key of sortedKeys) {
         const hours = business.special_hours[key];
-    
-        if (hours.is_open) {
-          special_hours.push(`  - "${displayDates[key]}: Open from ${hours.open_blocks[0].start_time} to ${hours.open_blocks[0].end_time}"`);
+
+        if (hours.is_open) { // Open from ${hours.open_blocks[0].start_time} to ${hours.open_blocks[0].end_time}
+          const hourBlocks = hours.open_blocks.map(block => `${block.start_time} to ${block.end_time}`).join(', ');
+          special_hours.push(`  - "${displayDates[key]}: Open from ${hourBlocks}"`);
         } else {
           special_hours.push(`  - "${displayDates[key]}: Closed"`);
         }
