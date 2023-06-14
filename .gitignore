@@ -7,6 +7,8 @@
 
 # Local Hugo output folder
 public/
+# But not the one in admin-app
+!/admin-app/public/
 
 # node_modules, anywhere
 node_modules/
