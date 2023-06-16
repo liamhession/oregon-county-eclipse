@@ -1,5 +1,5 @@
 [build]
-  command = "node build/generateMarkdown.js && hugo"
+  command = "npm install @supabase/supabase-js && node build/generateMarkdown.js && hugo"
   publish = "public"
   functions = "non_existent"
 
