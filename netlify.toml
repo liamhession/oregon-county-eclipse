@@ -9,4 +9,9 @@
     status = 200
     force = true
 
+  [[redirects]]
+    from = "/admin"
+    to = "https://netlify-name-thing.netlify.app"
+    status = 200
+    force = true
 
