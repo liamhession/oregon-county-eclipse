@@ -14,4 +14,10 @@
     to = "https://netlify-name-thing.netlify.app"
     status = 200
     force = true
+  
+  [[redirects]]
+    from = "/login"
+    to = "/admin/login"
+    status = 301
+    force = true
 
