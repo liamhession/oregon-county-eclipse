@@ -4,7 +4,9 @@
   functions = "non_existent"
 
   [[redirects]]
-  from = "/admin/*"
-  to = "/admin/index.html"
-  status = 200
+    from = "/admin/*"
+    to = "https://jocular-daffodil-cfecd4.netlify.app/:splat"
+    status = 200
+    force = true
+
 
