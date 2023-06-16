@@ -1,5 +1,5 @@
 [build]
-  command = "./build/build-to-publish.sh"
+  command = "node build/generateMarkdown.js && hugo"
   publish = "public"
   functions = "non_existent"
 

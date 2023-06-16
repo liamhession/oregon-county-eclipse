@@ -65,7 +65,7 @@ ${promos.map(promo => `  - name: "${promo.name}"
 ---
 `;
 
-    fs.writeFileSync(`./eclipse-site/content/${business.slug}.md`, content);
+    fs.writeFileSync(`./content/${business.slug}.md`, content);
   }
 }
 
