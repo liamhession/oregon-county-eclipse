@@ -21,3 +21,9 @@
     status = 301
     force = true
 
+  [[redirects]]
+    from = "/signup"
+    to = "/admin/signup"
+    status = 301
+    force = true
+

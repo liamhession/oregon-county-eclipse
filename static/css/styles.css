@@ -11,7 +11,7 @@ body {
   margin: 0;
   background: linear-gradient(to top, #ffffff 50%, #FFA500 100%);
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
-  height: 100vh; /* takes full height of viewport */
+  min-height: 100vh; /* changed from height to min-height */
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* spaces elements out */
