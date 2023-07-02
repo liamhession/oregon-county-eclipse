@@ -6,6 +6,53 @@ body {
   padding: 0;
 }
 
+.landing-page {
+  padding: 2rem;
+  margin: 0;
+  background: linear-gradient(to top, #ffffff 50%, #FFA500 100%);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  height: 100vh; /* takes full height of viewport */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* spaces elements out */
+  font-family: Arial, sans-serif; /* classic web 1.0 font */
+  width: 100%; /* takes full width */
+  box-sizing: border-box; /* new addition */
+}
+
+.landing-page-title {
+  font-size: 2.5rem;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.landing-page-description {
+  font-size: 1.5rem;
+  color: #666666;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.signup-button {
+  display: inline-block;
+  width: 100%;
+  padding: 1rem 0;
+  text-align: center;
+  background-color: #4a56e2;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  align-self: flex-end; /* pushes the button to the bottom */
+}
+
+.signup-button:hover {
+  background-color: #3b47d6;
+}
+
 .header-image {
   position: absolute;
   top: 0;

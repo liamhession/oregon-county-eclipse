@@ -1,0 +1,17 @@
+{{ define "main" }}
+  <div class="business-directory">
+    <h1>Business Directory</h1>
+    <ul>
+      {{ range .Data.Pages }}
+        <li>
+          <a href="{{ .Permalink }}">
+            <div class="business-entry">
+              <h2>{{ .Params.title }}</h2>
+              <p>{{ len .Params.promos }} promos</p>
+            </div>
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+  </div>
+{{ end }}
