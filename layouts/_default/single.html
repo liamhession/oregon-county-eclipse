@@ -19,7 +19,19 @@
 </div>
 {{ end }}
 
+<div class="flag-interest-pane special-hours">
+  <h3>Let Them Know You're Interested!</h3>
+  <div class="flag-interest-prompt">Think you'd like to visit this business over the Eclipse Weekend? Click an option below to help them gauge the extra demand.</div>
+  <a class="donate-button" href="#">Coming Before Friday</a>
+  <a class="donate-button" href="#">Coming Friday</a>
+  <a class="donate-button" href="#">Coming Saturday</a>
+  <a class="donate-button" href="#">Coming Sunday</a>
+  <a class="donate-button" href="#">Coming Monday</a>
+  <a class="donate-button" href="#">Not sure when, but I'll be there at some point</a>
+</div>
+
 <div class="promos-pane">
+  <h1 class="promo-name">Promos On Offer</h1>
 {{ range .Params.promos }}
   <div class="promo">
     <h2 class="promo-name">{{ .name }}</h2>
