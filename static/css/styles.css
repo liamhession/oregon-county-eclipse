@@ -6,6 +6,19 @@ body {
   padding: 0;
 }
 
+#page-container {
+  text-align: center;
+  padding-top: 10%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+/* Still won't go to edges of page, because it's offset 10% of the page container in both directions */
+.outside-container {
+  margin-left: -10%;
+  margin-right: -10%;
+}
+
 .landing-page {
   padding: 2rem;
   margin: 0;
@@ -34,7 +47,8 @@ body {
   margin-bottom: 4rem;
 }
 
-.signup-button {
+.any-button {
+  cursor: pointer;
   display: inline-block;
   width: 100%;
   padding: 1rem 0;
@@ -49,7 +63,7 @@ body {
   align-self: flex-end; /* pushes the button to the bottom */
 }
 
-.signup-button:hover {
+.any-button:hover {
   background-color: #3b47d6;
 }
 
