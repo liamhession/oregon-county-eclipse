@@ -5,10 +5,9 @@
   <link href="/css/styles.css" rel="stylesheet">
   <style>
     body {
-      display: flex;
+      /* display: flex;
       justify-content: center;
-      align-items: center;
-      height: 100vh;
+      align-items: center; */
       margin: 0;
       padding: 0;
     }
@@ -33,6 +32,15 @@
       border-radius: 5px;
     }
 
+    @media (max-width: 768px) {
+      #eclipse-image-gallery {
+        height: 200px;
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 50px;
+      }
+    }
+
     #eclipse-image-gallery {
       height: 300px;
       display: flex;
@@ -41,12 +49,64 @@
     }
 
     #purchase-now {
-      height: 1px;  /* For whatever reason needs to be a small value for layout to work */
+      display: flex;
+      justify-content: space-around;
+      align-items: stretch;
+      padding-bottom: 50px;
+    }
+
+    @media (max-width: 768px) {
+      #purchase-details {
+        flex: 0 0 50%;
+      }
+      #purchase-form-iframe-container {
+        flex: 0 0 40%;
+      }
+    }
+
+    #purchase-details {
+      flex: 0 0 60%;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 1.3em;
+    }
+
+    #purchase-form-iframe-container {
+      flex: 0 0 40%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    iframe {
+      position: absolute;
+      border: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    @media (max-width: 768px) {
+      #purchase-now {
+        flex-direction: column;
+      }
+
+      #purchase-details,
+      #purchase-form-iframe-container {
+        flex: 0 0 100%;
+      }
+    }
+/* 
+    #purchase-now {
+      height: 1px;  /* For whatever reason needs to be a small value for layout to work *//*
       display: flex;
       justify-content: space-around;
     }
 
     #purchase-details {
+      flex: 1;
       padding: 20px;
       display: flex;
       flex-direction: column;
@@ -61,11 +121,12 @@
     }
 
     #purchase-form-iframe-container {
+      flex: 1;
       position: relative;
       overflow: hidden;
       width: 40%;
       height: 750px;
-    }
+    } */
   </style>
 </head>
 
@@ -102,8 +163,7 @@
               <span>Proceeds go to fund the Alton Area Chamber of Commerce, a 501(c)(3) non-profit that serves the local community's businesses and people.</span>
           </p>
           <p>
-              <span>The Chamber's design was printed onto these glasses by Rainbow Symphony. Their glasses meet all the relevant eye safety standards, and are recommended by the American Astronomical Society. You can read more details at </span>
-              <span><a href="https://www.rainbowsymphony.com/pages/eclipse-safety" target="_blank">https://www.rainbowsymphony.com/pages/eclipse-safety</a></span>
+              <span>The Chamber's design was printed onto these glasses by Rainbow Symphony. Their glasses meet all the relevant eye safety standards, and are recommended by the American Astronomical Society. You can read more details on <a href="https://www.rainbowsymphony.com/pages/eclipse-safety" target="_blank">their Eclipse Safety page</a></span>
           </p>
       </div>
       
