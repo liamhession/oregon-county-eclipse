@@ -2,6 +2,8 @@
 <html>
 <head>
   <title>Reserve Eclipse Glasses</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <link href="/css/styles.css" rel="stylesheet">
   <style>
     h1 {
@@ -14,14 +16,8 @@
       height: auto;
     }
 
-    button.scroll-to-purchase-button {
-      cursor: pointer;
-      margin: 20px;
-      padding: 10px;
-      font-size: 24px;
-      background-color: #f2f2f2;
-      border: 1px solid #ddd;
-      border-radius: 5px;
+    .scroll-to-purchase-button {
+      margin-bottom: 50px;
     }
 
     #eclipse-image-gallery {
@@ -31,39 +27,24 @@
       margin-bottom: 50px;
     }
 
-    @media (max-width: 768px) {
-      #eclipse-image-gallery {
-        height: 200px;
-      }
-    }
-
-
-    #purchase-now {
+    #purchase-container {
       display: flex;
+      padding-bottom: 50px;
       justify-content: space-around;
       align-items: stretch;
-      padding-bottom: 50px;
-    }
-
-    @media (max-width: 768px) {
-      #purchase-details {
-        flex: 0 0 50%;
-      }
-      #purchase-form-iframe-container {
-        flex: 0 0 40%;
-      }
+      min-height: 80vh;
     }
 
     #purchase-details {
       flex: 0 0 50%;
       padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    }
+
+    #purchase-details p {
       font-size: 1.3em;
     }
 
-    #purchase-form-iframe-container {
+    #purchase-now {
       flex: 0 0 50%;
       position: relative;
       overflow: hidden;
@@ -77,48 +58,116 @@
       width: 100%;
       height: 100%;
     }
+
+    @media (max-width: 768px) {
+      #page-container {
+        padding-top: 0px;
+        overflow: hidden;
+      }
+      h1 {
+        margin-top: 30px;
+        font-size: 1.4em;
+      }
+      h2 {
+        font-size: 1.2em;
+      }
+      h3 {
+        font-size: 0.9em;
+      }
+      #glasses-image-container {
+        width: 300px;
+        height: 200px;
+        position: relative;
+      }
+      #glasses-image-container img {
+        position: absolute;
+        display: block;
+        max-width: none;
+        height: 100%;
+        width: auto;
+        animation: scroll-image 20s cubic-bezier(0.35, 0, 0.65, 1) infinite;
+      }
+      @keyframes scroll-image {
+        0%, 100% {
+          left: 25%;
+        }
+        50% {
+          left: -400%;
+        }
+      }
+      #eclipse-image-gallery {
+        height: unset; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #eclipse-image-gallery img {
+        width: 90%;
+        margin-bottom: 8px;
+      }
+      #purchase-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: unset;
+      }
+      #purchase-details {
+        padding: 0px;
+      }
+      #purchase-details p {
+        font-size: 1em;
+      }
+      #purchase-now {
+        width: 100%;
+        min-height: 80vh;
+        overflow-x: hidden;
+      }
+    }
   </style>
 </head>
 
 <body>
   <div id="page-container">
-    <h1>Reserve a pair of commemorative Eclipse Glasses today</h1>
-    <div class="outside-container">
+    <h1>Reserve Your Commemorative Eclipse Glasses Today!</h1>
+    <div id="glasses-image-container" class="outside-container">
       <img src="images/glasses.png" alt="Eclipse Glasses">
     </div>
-    <h3>Featuring the exact timing of totality for the major towns in the county.</h3>
+    <h3>Know exactly when to expect totality with town-by-town timing printed right on the glasses</h3>
 
-    <h1>Buy now, for only $8 per pair!</h1>
+    <h1>Buy now, for only $5 per pair!</h1>
     <a href="#purchase-now" class="any-button scroll-to-purchase-button">Scroll down to purchase form</a>
     
-    <h1>More about Eclipse Glasses</h1>
-    <h3>Not only are they essential on eclipse day, and a keepsake for years to come, but also eclipse glasses are good fun any day you might like to look at or take a picture of the sun peeking out from behind something.</h3>
-    <div id="eclipse-image-gallery">
+    <br />
+    <h2>More about Eclipse Glasses</h2>
+    <h3>Not only are they essential on eclipse day, and a keepsake for years to come, but eclipse glasses also enable good fun any day. With them, you can enjoy watching the sun set or peek out from behind a tree, a building, or a distant mountain. Or hold up your phone camera lens to them to capture that scene, as shown below.</h3>
+    <div id="eclipse-image-gallery" class="outside-container">
       <img src="images/holdingGlasses.jpg" alt="Holding Eclipse Glasses, April 2022">
       <img src="images/mountainEclipse.gif" alt="Sun being temporarily eclipsed by a mountain">
       <img src="images/treeBranchEclipse.jpg" alt="Sun behind a tree top">
     </div>
 
-    <div id="purchase-now">
+    <div id="purchase-container">
+      <div id="purchase-now">
+        <iframe title='Donation form powered by Zeffy' style='position: absolute; border: 0; top:0; left:0; bottom:0; right:0; width:100%; height:100%' src='https://www.zeffy.com/en-US/embed/ticketing/93ed68ce-6d7e-420a-abc2-4312df491daa' allowpaymentrequest allowTransparency="true"></iframe>
+      </div>
       <div id="purchase-details">
-        <h3>Commemorative Oregon County Eclipse Glasses</h3>
+        <h2>About the Commemorative Oregon County Eclipse Glasses</h2>
         <div>
           <p>
-              <span>Purchase all the pairs you'll need now, and save compared to buying last-minute! Pay now, and then swing by Alton on your chosen day to pick up the glasses you paid for.&nbsp;</span>
+            <span>Pay now, and then swing by Alton on your chosen day to pick up the glasses you paid for.&nbsp;</span>
           </p>
           <p>
-              <span>The Official Oregon County Eclipse glasses feature a handy list of the precise times that Totality starts and ends for the 4 main towns in the county. The&nbsp;design also depicts a forest scene of early spring along the Eleven Point River, with a couple of redbud trees standing out among the dormant oaks. Redbud artwork by local artist Dez Fleck.</span>
+            <span>The official Oregon County Eclipse glasses feature a handy list of precise town-by-town times that Totality starts and ends. The design also depicts a forest scene of early spring along the Eleven Point River, with a couple of redbud trees standing out among the dormant oaks. Redbud artwork by local artist Dez Fleck.</span>
           </p>
           <p>
-              <span>Proceeds go to fund the Alton Area Chamber of Commerce, a 501(c)(3) non-profit that serves the local community's businesses and people.</span>
+            <span>Proceeds go to fund the Alton Area Chamber of Commerce, a 501(c)(3) non-profit that serves the local community's businesses and people.</span>
           </p>
           <p>
-              <span>The Chamber's design was printed onto these glasses by Rainbow Symphony. Their glasses meet all the relevant eye safety standards, and are recommended by the American Astronomical Society. You can read more details on <a href="https://www.rainbowsymphony.com/pages/eclipse-safety" target="_blank">their Eclipse Safety page</a></span>
+            <span>The Chamber's design was printed onto these glasses by Rainbow Symphony. Their glasses meet all the relevant eye safety standards, and are recommended by the American Astronomical Society. You can read more details on <a href="https://www.rainbowsymphony.com/pages/eclipse-safety" target="_blank">their Eclipse Safety page</a></span>
           </p>
-      </div>
+        </div>
       
       </div>
-      <div id="purchase-form-iframe-container" ><iframe title='Donation form powered by Zeffy' style='position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:100%' src='https://www.zeffy.com/en-US/embed/ticketing/93ed68ce-6d7e-420a-abc2-4312df491daa' allowpaymentrequest allowTransparency="true"></iframe></div>
     </div>
   </div>
 </body>
