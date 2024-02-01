@@ -1,22 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oregon County Eclipse</title>
     <link href="/css/styles.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #FFFFFF; /* for overscroll */
+        }
+
+        .landing-page {
+            padding: 3rem;
+            margin: 0;
+            background: linear-gradient(to top, #FFFFFF 50%, #FFA500 100%);
+            box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+            min-height: 100vh;
+            /* changed from height to min-height */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            /* spaces elements out */
+            width: 100%;
+            /* takes full width */
+            box-sizing: border-box;
+            /* new addition */
+        }
+
+        .landing-page-pretitle {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: -.5rem;
+        }
+
+        .landing-page-title {
+            font-size: 5.5rem;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            margin-top: 0rem;
+        }
+
+        .landing-page-subtitle {
+            font-size: 1.9rem;
+            text-align: center;
+        }
+
+        #visitors-and-locals-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        .landing-page-description-container {
+            color: #424242;
+            text-align: center;
+            padding: 1rem;
+            flex-basis: 50%;
+        }
+
+        .landing-page-description-header {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .landing-page-description-element {
+            font-size: 1.75rem;
+            margin-bottom: 0.8rem;
+        }
+
+        /* Mobile Screen Specific Styles */
+        @media (max-width: 768px) {
+            .landing-page {
+                padding: 1.5rem;
+            }
+
+            .landing-page-pretitle {
+                font-size: 1.5rem;
+            }
+
+            .landing-page-title {
+                font-size: 4.4rem;
+            }
+
+            .landing-page-subtitle {
+                font-size: 1.6rem;
+            }
+
+            .landing-page-description-container {
+                padding: 0.5rem;
+            }
+
+            .landing-page-description-header {
+                font-size: 1rem;
+            }
+
+            .landing-page-description-element {
+                font-size: 0.8rem;
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
 </head>
+
 <body>
+    <div id="top-bar">
+        <a href="/visitors.html" class="top-bar-link">Resources for Visitors</a>
+        <a href="/glasses.html" class="top-bar-link">Get the Glasses</a>
+    </div>
     <div class="landing-page">
-        <h1 class="landing-page-title">The Eclipse comes to Oregon County, Missouri on April 8, 2024</h1>
-        <p class="landing-page-description">Visitors - Join us in celebrating the 2024 Solar Eclipse – get special access to local treasures through our unique promotions. Your contribution will create immediate and lasting enhancements, shaping our community for an unforgettable eclipse weekend and inviting you back for more enchanting visits in the future.</p>
-        <a href="/signup?type=visitor" class="any-button">
-            Sign Up as a Visitor
-        </a>
-        <p class="landing-page-description">Locals - You have an opportunity to offer up an experience to the many visitors we will host that weekend. This site will help you to put out the word and accept paid reservations for things like farm experiences and eclipse viewing from a scenic spot on your land.</p>
-        <a href="/signup?type=local" class="any-button">
-            Sign Up as a Local
-        </a>
+        <div>
+            <h3 class="oregon-county-font landing-page-pretitle">COME SEE THE</h3>
+            <h1 class="oregon-county-font landing-page-title">OREGON COUNTY ECLIPSE</h1>
+        </div>
+        <h2 class="landing-page-subtitle">The Eclipse comes to Oregon County, Missouri on April 8, 2024</h2>
+        <div id="visitors-and-locals-container">
+            <div class="landing-page-description-container">
+                <div class="landing-page-description-header">Visitors</div>
+                <div class="landing-page-description-element">Discover local treasures and know when to go</div>
+                <div class="landing-page-description-element">Explore the natural wonders of our forests and waterways</div>
+                <a href="/visitors.html" class="any-button">
+                    Build Your Itinerary
+                </a>
+            </div>
+            <div class="landing-page-description-container">
+                <div class="landing-page-description-header">Locals</div>
+                <div class="landing-page-description-element">Host a fun activity for visitors, and make money</div>
+                <div class="landing-page-description-element">Get prioritized at local restaurants and viewing sites that weekend</div>
+                <a href="/locals.html" class="any-button">
+                    Get Locals-only Access
+                </a>
+            </div>
+        </div>
     </div>
 </body>
+
 </html>

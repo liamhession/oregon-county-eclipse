@@ -36,14 +36,41 @@
       font-size: 1.1em;
       margin-bottom: 20px;
     }
+
+    label {
+      margin-right: 5px;
+    }
   </style>
 </head>
 
 <body>
   <div id="page-container">
-    <div id="locals-survey">
+    <form name="locals" netlify>
+      <p>
+        <label>Name</label><input type="text" name="name" />
+      </p>
+      <p>Please enter either your email or phone number so that we can contact you</p>
+      <p>
+        <label>Email</label><input type="email" name="email" />
+      </p>
+      <p>
+        <label>Phone number</label><input type="phone" name="phone" />
+      </p>
+      <p>
+        <label>What are you most interested in doing?</label>
+        <select name="interest">
+          <option value="hosting-activity">Hosting an activity for visitors</option>
+          <option value="reservations-restaurants">Making reservations at restaurants</option>
+          <option value="reservations-viewing-sites">Finding and securing less crowded eclipse viewing sites</option>
+          <option value="hosting-campers">Hosting campers on my land</option>
+      </p>
+      <p>
+        <button type="submit">Send</button>
+      </p>
+    </form>
+    <!-- <div id="locals-survey">
       <script type="text/javascript" src="https://form.jotform.com/jsform/240275333955055"></script> 
-    </div>
+    </div> -->
     <!-- <div id="locals-info-container">
       <h1>Wondering how you can help make our county's Eclipse experience as amazing as possible?</h1>
 

@@ -1,9 +1,18 @@
 body {
-  font-family: 'Verdana', sans-serif;
+  font-family: 'Lato', 'Tahoma', sans-serif;
   background-color: #F7EFE6;
   color: #333;
   margin: 0;
   padding: 0;
+}
+
+@font-face {
+  font-family: 'OregonCounty';
+  src: url('../fonts/oregon_county_mo.otf') format('opentype');
+}
+
+.oregon-county-font {
+  font-family: 'OregonCounty', 'Helvetica', sans-serif;
 }
 
 #page-container {
@@ -11,6 +20,7 @@ body {
   padding-top: 40px;
   padding-left: 10%;
   padding-right: 10%;
+  overflow: hidden;
 }
 
 /* Still won't go to edges of page, because it's offset 10% of the page container in both directions */
@@ -19,32 +29,33 @@ body {
   margin-right: -10%;
 }
 
-.landing-page {
-  padding: 2rem;
-  margin: 0;
-  background: linear-gradient(to top, #ffffff 50%, #FFA500 100%);
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
-  min-height: 100vh; /* changed from height to min-height */
+#top-bar {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* spaces elements out */
-  font-family: Arial, sans-serif; /* classic web 1.0 font */
-  width: 100%; /* takes full width */
-  box-sizing: border-box; /* new addition */
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  background-color: rgb(255, 255, 255, 0.3); 
+  /* background: linear-gradient(to bottom, #FFE990, #FFA500); */
 }
 
-.landing-page-title {
-  font-size: 2.5rem;
-  text-align: center;
+.top-bar-link {
+  display: inline-block;
+  padding: 10px 45px;
+  text-decoration: none;
+  color: #3E5577;
   font-weight: bold;
-  margin-bottom: 2rem;
 }
 
-.landing-page-description {
-  font-size: 1.5rem;
-  color: #666666;
-  text-align: center;
-  margin-bottom: 4rem;
+@media (max-width: 768px) {
+  #top-bar {
+    height: 30px;
+  }
+  .top-bar-link {
+    padding: 10px 25px;
+  }
 }
 
 .any-button {
@@ -65,6 +76,12 @@ body {
 
 .any-button:hover {
   background-color: #3b47d6;
+}
+
+@media (max-width: 768px) {
+  .any-button {
+    font-size: .8rem;
+  }
 }
 
 .header-image {

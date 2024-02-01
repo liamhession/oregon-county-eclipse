@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Resources for Visitors</title>
+  <!-- TODO: make this part of every page's header -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="/css/styles.css" rel="stylesheet">
+  <style>
+    #visitors-survey {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      #visitors-survey {
+        padding: 10px;
+      }
+    }
+
+    #visitors-info-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .visitors-section-header {
+      margin-top: 40px;
+      font-size: 1.6em;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .visitors-section-text {
+      text-align: center;
+      font-size: 1.1em;
+      margin-bottom: 20px;
+    }
+
+    label {
+      margin-right: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="page-container">
+    <form name="visitors" netlify>
+      <p>
+        <label>Name</label><input type="text" name="name" />
+      </p>
+      <p>
+        <label>Email</label><input type="email" name="email" />
+      </p>
+      <p>
+        <label>What best describes your party?</label>
+        <select name="party-size">
+          <option value="1">Solo person</option>
+          <option value="2">Couple or pair of people</option>
+          <option value="3-5">Small group of friends (3-5)</option>
+          <option value="family-3-5">Small family (3-5 people including adults and kids)</option>
+          <option value="6+">Large group of friends (6+)</option>
+          <option value="family-6+">Large family (6+ people including adults and kids)</option>
+        </select>
+      </p>
+      <p>
+        <label>What are you most interested in doing?</label>
+        <select name="interest">
+          <option value="paid-activities">Finding paid locally-hosted activities for the weekend</option>
+          <option value="itinerary">Seeing local recommendations and building an itinerary</option>
+          <option value="reservations-restaurants">Making reservations at restaurants</option>
+          <option value="reservations-viewing-sites">Finding and securing less crowded eclipse viewing sites</option>
+          <option value="accommodations">Help finding accommodations</option>
+        </select>
+      </p>
+      <p>
+        <button type="submit">Send</button>
+      </p>
+    </form>
+  </div>
+</body>
+
+</html>
