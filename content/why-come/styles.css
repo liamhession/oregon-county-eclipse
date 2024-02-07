@@ -1,0 +1,202 @@
+#why-come-intro {
+  padding-top: 60px;
+  max-width: 700px;
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+  #why-come-intro {
+    padding-top: 20px;
+  }
+}
+
+#why-come-intro-quote {
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.why-come-intro-body {
+  margin-bottom: 1rem;
+}
+
+.why-come-section {
+  max-width: 900px;
+  font-size: 1.2rem;
+}
+
+.centered-image-container {
+  width: 70%;
+  margin: auto;
+}
+
+.centered-image-container img {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .centered-image-container {
+    width: 100%;
+  }
+}
+
+.why-come-section-title {
+  font-size: 1.6rem;
+}
+
+@media (max-width: 768px) {
+  .why-come-section-title {
+    font-size: 1.3rem;
+  }
+}
+
+.centered-section-description {
+  text-align: center;
+  width: 100%;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .centered-section-description {
+    font-size: 0.9rem;
+  }
+}
+
+.why-come-section-image-and-description {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+  
+.why-come-section-desktop-title {
+  display: flex;
+  font-size: 1.6rem;
+}
+
+.why-come-section-mobile-title {
+  display: none;
+  font-size: 1.3rem;
+}
+
+.image-container {
+  flex: 0 0 40%;
+  max-width: 40%;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+}
+
+.why-come-section-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 0 58%; /* Little less than 60% to accommodate margins */
+  max-width: 58%;
+}
+
+@media (max-width: 768px) {
+  .why-come-section-image-and-description {
+    flex-direction: column;
+  }
+  
+  .why-come-section-mobile-title {
+    display: flex;
+  }
+
+  .why-come-section-desktop-title {
+    display: none;
+  }
+
+  .image-container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .why-come-section-description {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+.description-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 600px;
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+  .description-container {
+    width: 300px;
+    margin: auto;
+  }
+}
+
+.description-content {
+  width: 100%;
+  text-align: center;
+}
+
+.short-description {
+  cursor: pointer;
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  font-size: 1.4rem;
+  margin-right: calc(-100%);
+}
+
+.long-description {
+  font-size: 0.8rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+}
+
+@media (max-width: 768px) {
+  .short-description {
+    font-size: 1.2rem;
+  }
+  .long-description {
+    font-size: 0.7rem;
+  }
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+#long-description-explainer {
+  position: absolute;
+  top: -2px;
+  right: -20px;
+  font-size: 0.6rem;
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+}
+
+.multi-image-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%; /* Adjust as necessary */
+  /* Optional: add some gap between images */
+  gap: 10px;
+}
+
+.multi-image-container .image-wrapper {
+  flex: 1;
+  height: 200px; /* Fixed height for all images */
+  overflow: hidden; /* This will hide the parts of the image that overflow the wrapper */
+}
+
+.multi-image-container .image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This will make the image fill the wrapper */
+}

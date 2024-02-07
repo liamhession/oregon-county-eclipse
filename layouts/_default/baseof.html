@@ -2,7 +2,25 @@
 <html>
   <head>
     <title>{{ .Title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/styles.css">
+    {{ $customCSS := .Resources.GetMatch "styles.css" }}
+    {{ if $customCSS }}
+      <link rel="stylesheet" href="{{ $customCSS.Permalink }}">
+    {{ end }}
+
+    <!-- helper function to let "read more" links work -->
+    <script>
+      function showLongDescription(element) {
+        var siblings = Array.from(element.parentNode.children); // Get all siblings
+        var longDesc = siblings.find(sib => sib !== element && sib.classList.contains('long-description'));
+
+        if (longDesc) {
+            element.classList.add('hidden');
+            longDesc.classList.remove('hidden');
+        }
+      }
+    </script>
   </head>
   <body>
     {{ block "main" . }}{{ end }}
