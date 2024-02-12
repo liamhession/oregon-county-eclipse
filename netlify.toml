@@ -4,26 +4,26 @@
   functions = "non_existent"
 
   [[redirects]]
-    from = "/admin/*"
+    from = "/a/*"
     to = "https://jocular-daffodil-cfecd4.netlify.app/:splat"
     status = 200
     force = true
 
-  [[redirects]]
-    from = "/admin"
-    to = "https://netlify-name-thing.netlify.app"
-    status = 200
-    force = true
+  # [[redirects]]
+  #   from = "/admin"
+  #   to = "https://netlify-name-thing.netlify.app"
+  #   status = 200
+  #   force = true
   
   [[redirects]]
     from = "/login"
-    to = "/admin/login"
+    to = "/a/login"
     status = 301
     force = true
 
   [[redirects]]
     from = "/signup"
-    to = "/admin/signup"
+    to = "/a/signup"
     status = 301
     force = true
 
