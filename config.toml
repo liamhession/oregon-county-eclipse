@@ -1,4 +1,3 @@
 baseURL = 'https://oregoncountyeclipse.com/'
 languageCode = 'en-us'
 title = 'Oregon County Eclipse'
-uglyURLs = true
