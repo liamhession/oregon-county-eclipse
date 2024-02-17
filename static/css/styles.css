@@ -15,18 +15,9 @@ body {
   font-family: 'OregonCounty', 'Helvetica', sans-serif;
 }
 
-#page-container {
-  text-align: center;
-  padding-top: 40px;
-  padding-left: 10%;
-  padding-right: 10%;
-  overflow: hidden;
-}
-
-/* Still won't go to edges of page, because it's offset 10% of the page container in both directions */
-.outside-container {
-  margin-left: -10%;
-  margin-right: -10%;
+.hidden {
+  visibility: hidden;
+  opacity: 0;
 }
 
 #top-bar {
@@ -57,6 +48,205 @@ body {
     padding: 10px 20px;
   }
 }
+
+#page-container {
+  text-align: center;
+  padding-top: 40px;
+  padding-left: 10%;
+  padding-right: 10%;
+  overflow: hidden;
+}
+
+/* Still won't go to edges of page, because it's offset 10% of the page container in both directions */
+.outside-container {
+  margin-left: -10%;
+  margin-right: -10%;
+}
+
+
+/* Basic page section */
+
+.page-section {
+  max-width: 900px;
+  font-size: 1.2rem;
+  margin: auto;
+  padding-bottom: 1rem;
+}
+
+
+/* Centered images and text divs */
+
+.centered-image-container {
+  width: 70%;
+  margin: auto;
+}
+
+.centered-image-container img {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .centered-image-container {
+    width: 100%;
+  }
+}
+
+.section-title {
+  font-size: 1.6rem;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.3rem;
+  }
+}
+
+.centered-section-description {
+  text-align: center;
+  width: 100%;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .centered-section-description {
+    font-size: 0.9rem;
+  }
+}
+
+.multi-image-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%; /* Adjust as necessary */
+  /* Optional: add some gap between images */
+  gap: 10px;
+}
+
+.multi-image-container .image-wrapper {
+  flex: 1;
+  height: 200px; /* Fixed height for all images */
+  overflow: hidden; /* This will hide the parts of the image that overflow the wrapper */
+}
+
+.multi-image-container .image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This will make the image fill the wrapper */
+}
+
+
+/* Image with description div */
+
+.image-with-description {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.image-with-description .desktop-title {
+  display: flex;
+  font-size: 1.6rem;
+}
+
+.image-with-description .mobile-title {
+  display: none;
+  font-size: 1.3rem;
+}
+
+@media (max-width: 768px) {
+  .image-with-description .mobile-title {
+    display: flex;
+  }
+
+  .image-with-description .desktop-title {
+    display: none;
+  }
+}
+
+.image-with-description .image-container {
+  flex: 0 0 40%;
+  max-width: 40%;
+}
+
+.image-with-description .image-container img {
+  width: 100%;
+  height: auto;
+}
+
+.image-with-description .description-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 0 58%; /* Little less than 60% to accommodate margins */
+  max-width: 58%;
+}
+
+@media (max-width: 768px) {
+  .image-with-description {
+    flex-direction: column;
+  }
+
+  .image-with-description .image-container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .image-with-description .description-container {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+.description-content-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 600px;
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+  .description-content-container {
+    width: 300px;
+    margin: auto;
+  }
+}
+
+.description-content {
+  width: 100%;
+  text-align: center;
+}
+
+.short-description {
+  cursor: pointer;
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  font-size: 1.4rem;
+  margin-right: calc(-100%);
+  transition: opacity 0.5s;
+}
+
+.long-description {
+  font-size: 0.8rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  transition: opacity 0.5s;
+}
+
+@media (max-width: 768px) {
+  .short-description {
+    font-size: 1.2rem;
+  }
+  .long-description {
+    font-size: 0.7rem;
+  }
+}
+
+
+/* Basic button */
 
 .any-button {
   cursor: pointer;
