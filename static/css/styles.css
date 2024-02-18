@@ -6,6 +6,10 @@ body {
   padding: 0;
 }
 
+a {
+  color: #2f5184;
+}
+
 @font-face {
   font-family: 'OregonCounty';
   src: url('../fonts/oregon_county_mo.otf') format('opentype');
@@ -51,9 +55,10 @@ body {
 
 #page-container {
   text-align: center;
-  padding-top: 40px;
+  padding-top: 4rem;
   padding-left: 10%;
   padding-right: 10%;
+  padding-bottom: 2rem;
   overflow: hidden;
 }
 
@@ -64,13 +69,17 @@ body {
 }
 
 
-/* Basic page section */
+/* Basic page sections */
 
 .page-section {
   max-width: 900px;
   font-size: 1.2rem;
   margin: auto;
   padding-bottom: 1rem;
+}
+
+.page-subsection {
+  padding-bottom: 0.8rem;
 }
 
 
@@ -99,6 +108,16 @@ body {
 @media (max-width: 768px) {
   .section-title {
     font-size: 1.3rem;
+  }
+}
+
+.subsection-title {
+  font-size: 1.3rem;
+}
+
+@media (max-width: 768px) {
+  .subsection-title {
+    font-size: 1.1rem;
   }
 }
 
@@ -225,7 +244,8 @@ body {
   text-decoration-line: underline;
   text-decoration-style: dotted;
   font-size: 1.4rem;
-  margin-right: calc(-100%);
+  margin-right: -100%;
+  transform: translateY(-50%);
   transition: opacity 0.5s;
 }
 
