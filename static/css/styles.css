@@ -10,6 +10,10 @@ a {
   color: #2f5184;
 }
 
+a:visited {
+  color: #632f84;
+}
+
 @font-face {
   font-family: 'OregonCounty';
   src: url('../fonts/oregon_county_mo.otf') format('opentype');
