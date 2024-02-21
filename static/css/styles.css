@@ -193,6 +193,11 @@ a:visited {
   max-width: 40%;
 }
 
+.image-with-description.small-image .image-container {
+  flex: 0 0 20%;
+  max-width: 20%;
+}
+
 .image-with-description .image-container img {
   width: 100%;
   height: auto;
@@ -204,6 +209,11 @@ a:visited {
   align-items: center;
   flex: 0 0 58%; /* Little less than 60% to accommodate margins */
   max-width: 58%;
+}
+
+.image-with-description.small-image .description-container {
+  flex: 0 0 78%;
+  max-width: 78%;
 }
 
 @media (max-width: 768px) {
@@ -260,12 +270,19 @@ a:visited {
   transition: opacity 0.5s;
 }
 
+.medium-description {
+  font-size: 1.2rem;
+}
+
 @media (max-width: 768px) {
   .short-description {
     font-size: 1.2rem;
   }
   .long-description {
     font-size: 0.7rem;
+  }
+  .medium-description {
+    font-size: 1rem;
   }
 }
 
