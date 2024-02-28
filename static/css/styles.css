@@ -10,7 +10,7 @@ a {
   color: #2f5184;
 }
 
-a:visited {
+a:visited:not(.top-bar-link):not(.any-button) {
   color: #632f84;
 }
 
