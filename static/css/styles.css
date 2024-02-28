@@ -130,10 +130,16 @@ a:visited {
   width: 100%;
   font-size: 1.2rem;
 }
+.centered-section-description.big {
+  font-size: 1.4rem;
+}
 
 @media (max-width: 768px) {
   .centered-section-description {
     font-size: 0.9rem;
+  }
+  .centered-section-description.big {
+    font-size: 1.1rem;
   }
 }
 

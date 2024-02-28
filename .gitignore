@@ -1,3 +1,8 @@
+# Temp maybe just want to simplify committing
+static/experience.html
+static/project.html
+static/timing.html
+
 # Local Netlify folder
 .netlify
 
